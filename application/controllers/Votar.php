@@ -76,7 +76,7 @@ class Votar extends CI_Controller {
     public function  novovoto() {
         if ($this->session->cpf){  
             $this->votos_model->usuarios_cpf = $this->session->cpf;
-            if ($this->votos_model->quantidadeVotos() <3){
+            if ($this->votos_model->quantidadeVotos() < 6){
                 $dados['total'] = $this->votos_model->quantidadeVotos();
 
                 $this->load->view('header');
@@ -119,7 +119,7 @@ class Votar extends CI_Controller {
 
         $this->email->send();
         
-        $msg = "<p>Foi enviado para o e-mail " . $this->session->email . "a confirmação do seu voto.</p>";
+        $msg = "<p>Foi enviado para o e-mail " . $this->session->email . " a confirmação do seu voto.</p>";
         $msg .= "<p>Por favor, acesse seu e-mail e clique no link enviado para a <b>CONFIRMAÇÃO e FINALIZAÇÃO da votação.</b></p>";
         $msg .= "<p>Caso não apareça o e-mail em sua caixa de entrada, por favor, verifique se não foi encaminhado para a caixa <b>LIXO ELETRÔNICO ou SPAM</b></p>";
         $msg .= "<p>LEMBRE-SE: Se você não acessar o link enviado no seu e-mail, o seu voto <b>NÃO SERÁ COMPUTADO!</b></p>";

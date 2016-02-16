@@ -9,8 +9,10 @@ class Resultado extends CI_Controller {
     }
     
     public function index() {
+        $this->load->model('resultado_model');
+        $dados['dados'] = $this->resultado_model->resultadoParcial();
         $this->load->view('header');
-        //$this->load->view('principal');
+        $this->load->view('resultado', $dados);
         $this->load->view('footer');
     }
 }

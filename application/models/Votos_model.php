@@ -20,7 +20,7 @@ class Votos_model extends CI_Model {
     }
     
     public function carregaListaCandidatos($letra) {
-        $this->db->like('nome', $letra, 'after'); 
+        $this->db->like('nome', $letra, 'both'); 
         $dados = $this->db->get("candidatos");
         foreach ($dados->result() as $d){
             echo $d->id."###".$d->nome."|";
@@ -32,7 +32,7 @@ class Votos_model extends CI_Model {
         $dados = $this->db->query("SELECT count(*) as total FROM temp_voto WHERE usuarios_cpf=".$this->usuarios_cpf);
         $temp1 = $dados->result();
                 
-        if ($temp1[0]->total < 3){
+        if ($temp1[0]->total < 6){
             //verificar se o eleitor votou neste candidato mais de uma vez
             $this->db->select('*');
             $this->db->where('usuarios_cpf', $this->usuarios_cpf);

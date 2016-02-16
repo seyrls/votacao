@@ -86,13 +86,12 @@
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-          <h3 class="text-muted"><img src="<?php echo base_url();?>public/logo.jpg">Sistema de Votação da ANAUNI</h3>
+          <h3 class="text-muted"><img src="<?php echo base_url();?>public/logo.png">Sistema de Votação da ANAUNI</h3>
         <nav>
           <ul class="nav nav-justified">
             <li><a href="<?php echo base_url();?>index.php">Início</a></li>
             <li><a href="<?php echo base_url();?>index.php/votar">Votar</a></li>
-            <li><a href="#">Resultado Final</a></li>
-            <li><a href="<?php echo base_url();?>index.php/duvidas">Dúvidas</a></li>
+            <li><a href="<?php echo base_url();?>index.php/resultado">Resultado parcial</a></li>
             <li><a href="<?php echo base_url();?>index.php/votar/sair">Sair</a></li>
           </ul>
         </nav>
